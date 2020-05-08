@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+	<layout title="COM_JBMPLAYER_VIEW_DEFAULT_TITLE" option="COM_JBMPLAYER_VIEW_DEFAULT_OPTION">
+		<help
+			key="JHELP_MENUS_MENU_ITEM_WRAPPER"
+		/>
+		<message>
+			<![CDATA[COM_JBMPLAYER_VIEW_DEFAULT_DESC]]>
+		</message>
+	</layout>
+
+	<!-- Add fields to the parameters object for the layout. -->
+	<fields name="params">
+        <fieldset name="alias">
+            <field  name="use_alias"
+                    default="0"
+                    type="radio"
+                    label="Use alias menu item?"
+                    description="Optional choice for an alias menu item. Component will show its images instead. This is support for multilanguage sites.">
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
+            </field>
+			<field name="alias_id"
+				type="menuitem"
+				label="Alias menu item"
+                default="0"
+                state="1"
+				description="Optional choice for an alias menu item. Component will show its images instead. This is support for multilanguage sites."
+			/>
+		</fieldset>
+        <fieldset name="player">
+            <field  name="playerShowControls"
+                    default="1"
+                    type="radio"
+                    label="Show main controls"
+                    description="Show main controls console or hide?">
+                <option value="0">hide</option>
+                <option value="1">show</option>
+            </field>
+            <field  name="autoplay"
+                    default="0"
+                    type="radio"
+                    label="Autoplay"
+                    description="If yes, will play first track upon a start.">
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
+            </field>
+            <field  name="loop"
+                default="0"
+                type="radio"
+                label="Loop"
+                description="If yes, will loop through all tracks.">
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
+            </field>
+            <field  name="initialVolume"
+                default="80"
+                type="integer"
+                first = "0"
+                last = "100"
+                step = "20"
+                label="Initial volume"
+                description="Sets player's initial volume." 
+            />
+		</fieldset>
+        <fieldset name="remote_control">
+            <field  name="remoteId"
+                default="0"
+                type="text"
+                label="Remote control id"
+                description="Choose a remote control" 
+            />
+            <field  name="remoteAutoHide"
+                    default="1"
+                    type="radio"
+                    label="Auto hide remote?"
+                    description="Choosing yes will hide the remote control while on page with the component.">
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
+            </field>
+		</fieldset>
+	</fields>
+</metadata>

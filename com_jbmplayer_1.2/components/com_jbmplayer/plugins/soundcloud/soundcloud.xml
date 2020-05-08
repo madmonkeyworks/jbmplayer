@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="plugin" version="1.0" method="upgrade">
+	<name>soundcloud</name>
+	<author>Jan B Mwesigwa</author>
+	<creationDate>27 2013</creationDate>
+	<copyright>(C) 2013 Jan B Mwesigwa. All rights reserved.
+	</copyright>
+	<license>GNU General Public License version 2 or later; see
+		LICENSE.txt</license>
+	<authorEmail>jan@seven-m.com</authorEmail>
+	<authorUrl>www.janmwesigwa.com</authorUrl>
+	<version>1.0.0</version>
+    <description>Plugin to play soundcloud tracks</description>
+        
+	<files folder="">
+		<folder>css</folder>
+        <folder>js</folder>
+		<filename>index.html</filename>
+		<filename>soundcloud.php</filename>
+		<filename>soundcloud.xml</filename>
+	</files>
+    
+    <config>
+        <fields name="params">
+            <fieldset name="default">
+                <field  name="user"
+                        type="text" 
+                        label="Soundcloud name"
+                        default="bartvanhelsdingen"
+                        description="Enter your soundcloud name"
+                />
+            </fieldset>
+        </fields>
+    </config>
+</extension>

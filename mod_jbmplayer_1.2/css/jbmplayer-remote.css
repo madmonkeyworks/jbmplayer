@@ -1,0 +1,69 @@
+@charset "UTF-8";
+
+/* PLAYER LAYOUT */
+div.clear {clear: both;}
+
+div.jbmplayer-remote { 
+    position: relative;
+    width: 290px; height: 29px; 
+    background: url(images/player_sprite.png) 0 0 no-repeat;
+}
+
+div.jbmplayer-remote.floating { 
+    border: 5px solid #C93;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -o-border-radius: 5px;
+    -ms-border-radius: 5px;
+    z-index: 100;
+}
+
+/* buttons */
+.jbmplayer-remote .buttons {
+    position: absolute;
+    width: 110px;
+    top: 4px;
+    left: 33px;
+}
+.jbmplayer-remote .buttons div { 
+    cursor: pointer;
+    float: left; 
+    margin-left: 6px; 
+    background-image: url(images/player_sprite.png);
+    background-position:  0 -37px;
+    background-repeat: no-repeat; 
+    width: 21px; height: 21px;
+    text-indent: -9999px;
+}
+.jbmplayer-remote .buttons div:first-child {margin-left: 0px; }
+.jbmplayer-remote .jbmplayer-play {background-position: -43px -37px !important;}
+.jbmplayer-remote .jbmplayer-play.playing {background-position: -21px -37px !important; }
+.jbmplayer-remote .jbmplayer-stop {background-position: -65px -37px !important; }
+.jbmplayer-remote .jbmplayer-next {background-position: -87px -37px !important; }
+
+/* volume */
+.jbmplayer-remote .volume {
+    position: absolute;
+    top: 10px;
+    margin: 0 auto;
+    width: 100px;
+    height: 10px;
+    background: url(images/player_sprite.png) 0 -66px no-repeat;
+    right: 35px;
+}
+
+.jbmplayer-remote .volume .volume-handle-container {
+    width: 100px; height: 25px;
+    position: relative;
+    top: -5px;
+}
+
+.jbmplayer-remote .volume .volume-handle {
+    cursor: pointer;
+    width: 14px;
+    height: 18px;
+    background: url(images/player_sprite.png) 0 -80px no-repeat;
+    position: absolute;
+    top: 3px;
+}

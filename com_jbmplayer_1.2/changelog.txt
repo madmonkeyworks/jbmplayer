@@ -1,0 +1,9 @@
+TODO
+- manager…settings form… validate input
+- back-end configuration 
+- in init … check compatibility for JSON.stringify, parseJSON
+- component params… field for choosing remote control..show all installed remote control modules
+- component params …add remote always visible option
+- phpthumb antioffsitelinking
+
+VERSION 2.0 BETA

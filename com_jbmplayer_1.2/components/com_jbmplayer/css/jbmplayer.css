@@ -1,0 +1,290 @@
+@charset "UTF-8";
+
+/* PLAYLIST LAYOUT */
+div.jbmplayer-container.hidden {
+    visibility: hidden;
+    position: absolute;
+    top: 0;
+}
+div.jbmplayer-container a {text-decoration: none;}
+div.jbmplayer-container .album {width: 100%; position: relative; margin-top: 25px; }
+div.jbmplayer-container .album .col { float: left; }
+div.jbmplayer-container .album .col1 .inside { padding-right: 10px; }
+div.jbmplayer-container .album .col1 { width: 20%; }
+div.jbmplayer-container .album .col2 { width: 30%; }
+div.jbmplayer-container .album .col3 { width: 49%; }
+
+div.jbmplayer-container .length {display: none; position: absolute; top: 5px; right: 5px;}
+div.jbmplayer-container .total-duration-container {display: none;}
+div.jbmplayer-container .album .totalduration {float: right; position: initial; position: -moz-initial; }
+div.jbmplayer-container .albumartwork {max-width: 95%; width: 95%; }
+div.jbmplayer-container .albummoreinfo { margin-top: 30px; }
+div.jbmplayer-container .track .moreinfo { display: none; margin-left: 10px; }
+div.jbmplayer-container .track .track-link { display: block; width: 100%;}
+div.jbmplayer-container .track.current { border: thin solid green; padding: 5px 5px; border-radius: 4px; -moz-border-radius: 4px; -webkit-border-radius: 4px; margin-left: -5px;}
+div.jbmplayer-container .track .name {width: 85%; display: block; float: left;}
+div.jbmplayer-container .separator {height: 0px; clear: both;} 
+div.jbmplayer-container .album .albumdescription {margin-bottom: 20px; font-size: 100% !important;}
+div.jbmplayer-container .album .albumdescription p {font-size: 100% !important;}
+div.jbmplayer-container .album .albumprice {font-size: 15px; margin-left: 10px; }
+div.jbmplayer-container .album .totalduration {display: none; }
+div.jbmplayer-container .album > .separator {height: 25px; border-top: thin solid green; }
+div.jbmplayer-container .album .track .separator {height: 0px; clear: both;}
+div.jbmplayer-container .album h2.albumname {margin-top:-10px; font-size: 1.2em;}
+.jbmplayer-content .track {margin-bottom: 5px;}
+div.jbmplayer-container .jbmplayer-content > .track, div.jbmplayer-container .jbmplayer-templates > .track {}
+div.jbmplayer-content .track .artwork {height: 20px; display: none; float: left; margin-right: 10px;}
+div.jbmplayer-content {width: 100%; float: left;}
+
+/* MANAGER LAYOUT */
+div.jbmplayer-container .track {position: relative;}
+div.jbmplayer-container .tools {margin-bottom: 2em; margin-top: 60px; border-top: thin solid red;}
+div.jbmplayer-container .tools > div {margin-top: 20px;}
+div.jbmplayer-container .tracklist-content .track-link {display: inline !important;}
+div.jbmplayer-container .tracklist-buttons {margin-top: 10px;}
+div.jbmplayer-container .tracklist-pagination {margin-bottom: 10px;}
+div.jbmplayer-container .tracklist-pagination .prev-page-button {margin-right: 20px;}
+
+div.jbmplayer-container a.button, #jbmplayer-dialog a.button {
+    text-decoration: none;
+    margin-right: 19px;
+    padding: 3px 15px;
+    color: gray;
+    background: black;
+    border: thin solid #4E4E4E;
+    border-radius: 3px;
+}
+div.jbmplayer-container a.button:hover, #jbmplayer-dialog a.button:hover {color: white; }
+div.jbmplayer-container a.add-track-button {color: gray; }
+div.jbmplayer-container a.add-track-button:hover {color: white; }
+div.jbmplayer-container .delete-button, #jbmplayer-dialog .delete-button {
+    position: absolute;
+    top: 3px;
+    right: -25px;
+    padding: 3px;
+    background: red;
+    border: thin solid gray;
+    color: white;
+    text-align: center;
+    font-size: 7px;
+    text-decoration: none;
+    border-radius: 3px;
+    height: 4px;
+    line-height: 0.5;
+}
+div.jbmplayer-content .album > .delete-button {left: -25px; right: initial; right: -moz-initial;}
+div.jbmplayer-container .artwork-delete-button.delete-button {top: 3px; left: initial; left: -moz-initial; right: 3px;}
+div.jbmplayer-container .settings .form label {font-weight: normal; margin-right: 10px; color: white;}
+div.jbmplayer-container .settings .form input {padding: 7px 10px; font-size: 12px; width: 200px; }
+div.jbmplayer-container input, div.jbmplayer-container textarea {background: transparent; border: thin solid gray; color: white; }
+div.jbmplayer-container .filelist img {cursor: pointer; max-height: 180px; min-height: 180px;}
+div.jbmplayer-container .filelist .artwork-wrapper {margin-right: 10px; margin-bottom: 10px; float: left; position: relative;}
+
+#popup { position: fixed; top:0; left: 45%; z-index:1000;}
+.popup-message {padding: 10; color: white}
+.popup-message.success { background-color: lightgreen; }
+.popup-message.error {background-color: red; }
+
+#jbmplayer-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+#jbmplayer-overlay-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    filter:alpha(opacity=70);
+    -moz-opacity:0.7;
+    -khtml-opacity: 0.7;
+    opacity: 0.7;
+    z-index: 10000;
+}
+#jbmplayer-overlay-message {
+    position: relative;
+    top: 45%;
+    width: 100px;
+    z-index: 10010;
+    margin: 0 auto;
+    background: black;
+    padding: 15px;
+    border: thin solid #4E4E4E;
+    border-radius: 8px;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+}
+
+/* PLAYER LAYOUT */
+div.clear {clear: both;}
+
+div.jbmplayer-player {
+    font-family: Helvetica, Arial, "Lucida Sans";
+    float: right;
+}
+div.jbmplayer-player .head { background: url(images/player_sprite.png) 0 -400px no-repeat; height: 168px; width: 290px;}
+div.jbmplayer-player .body { 
+    position: relative;
+    width: 290px; height: 195px; 
+    background: url(images/player_sprite.png) 0 0 no-repeat;
+}
+
+/* position bar */
+.jbmplayer-player .position-container {
+    position: relative;
+    top: 30px;
+    margin: 0 auto;
+    width: 260px; height: 33px;
+    background: url(images/player_sprite.png) 0 -208px no-repeat;
+}
+
+.jbmplayer-player .position-bar {
+    width: 244px; height: 5px; background: #000000;
+    position: relative;
+    margin: 0 auto;
+    top: 10px;
+}
+
+.jbmplayer-player .position-handle-container {
+    width: 243px; height: 22px; 
+    position: relative;
+    margin: 0 auto;
+}
+
+.jbmplayer-player .position-handle {
+    width: 3px; height: 22px; background: #b30000;
+    position: absolute;
+}
+
+.jbmplayer-player .position {
+    display: block;
+    position: absolute;
+    top: 14px;
+    left: 7px;
+    font-size: 12px;
+    color: #ffffff;
+}
+
+.jbmplayer-player .remaining {
+    display: block;
+    position: absolute;
+    top: 14px;
+    right: 8px;
+    font-size: 12px;
+    color: #ffffff;
+}
+
+/* buttons */
+.jbmplayer-player .buttons {
+    position: relative;
+    width: 260px;
+    margin: 0 auto;
+    top: 40px;
+}
+.jbmplayer-player .buttons div { 
+    cursor: pointer;
+    float: left; 
+    margin-left: 6px; 
+    background-image: url(images/player_sprite.png);
+    background-position: 0 -333px;
+    background-repeat: no-repeat;
+    width: 60px; height: 60px;
+    text-indent: -9999px;
+}
+.jbmplayer-player .buttons div:first-child {margin-left: 0px; }
+.jbmplayer-player .jbmplayer-play {background-position: -130px -333px !important;
+}
+.jbmplayer-player .jbmplayer-play.playing {background-position: -65px -333px !important; }
+.jbmplayer-player .jbmplayer-stop {background-position: -195px -333px !important; }
+.jbmplayer-player .jbmplayer-next {background-position: -260px -333px !important; }
+
+/* volume */
+.jbmplayer-player .volume {
+    position: relative;
+    top: 57px;
+    margin: 0 auto;
+    width: 260px; height: 32px;
+    background: url(images/player_sprite.png) 0 -254px no-repeat;
+}
+
+.jbmplayer-player .volume .volume-handle-container {
+    width: 260px; height: 25px;
+    position: relative;
+    top: -5px;
+}
+
+.jbmplayer-player .volume .volume-handle {
+    cursor: pointer;
+    width: 25px; height: 25px;
+    background: url(images/player_sprite.png) 0 -290px no-repeat;
+    position: absolute;
+    top: 0px;
+}
+
+/* FILE BROWSER */
+div.jbmplayer-file-browser .filelist img {max-height: 150px; min-height: 150px; opacity: 1;}
+div.jbmplayer-file-browser .filelist .artwork-wrapper {margin-right: 10px; margin-bottom: 10px; float: left; position: relative; cursor:pointer;}
+div.jbmplayer-file-browser .filelist .artwork-wrapper .delete-button {right: 4px !important; z-index:10;}
+div.jbmplayer-file-browser .filelist .artwork-wrapper:hover img {opacity: 0.7;}
+
+/* SYSTEM DIALOG */
+#jbmplayer-dialog {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+#jbmplayer-dialog-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    filter:alpha(opacity=70);
+    -moz-opacity:0.7;
+    -khtml-opacity: 0.7;
+    opacity: 0.7;
+    z-index: 10000;
+}
+#jbmplayer-dialog-container {
+    position: fixed;
+    top: 10px;
+    width: 100px;
+    max-height: 90%;
+    max-width: 95%;
+    z-index: 10010;
+    margin: 0 auto;
+    background: black;
+    padding: 15px;
+    border: thin solid #4E4E4E;
+    border-radius: 8px;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    overflow: hidden;
+}
+#jbmplayer-dialog-container .content {
+    overflow: auto;
+    max-height: 88%;
+    border: thin solid gray;
+}
+#jbmplayer-dialog-container .content .wrapper {
+    padding: 10px;
+}
+#jbmplayer-dialog-container .buttons {
+    position: absolute;
+    bottom: 15px;
+}
+#jbmplayer-dialog-container .label {
+    font-size: 140%;
+}
+#jbmplayer-dialog-container .tracklist .plugin {font-size: 10px; border-radius: 2px; border: thin solid; padding: 1px 3px; margin-right: 20px;}
+#jbmplayer-dialog-container .tracklist .track {line-height: 2;}
+#jbmplayer-dialog-container input.tracklist-filter {width: 150px}
+#jbmplayer-dialog-container .buttons-separator { clear: both; height: 1em;}
+#jbmplayer-dialog-container .length {margin-left: 20px;}
